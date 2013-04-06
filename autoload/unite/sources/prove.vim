@@ -4,7 +4,7 @@
 call unite#util#set_default('g:unite_source_prove_fail_command', 'prove')
 
 let s:source = {
-            \ 'name': 'prove-fail',
+            \ 'name': 'prove',
             \ 'hooks': {},
             \ 'variables': {
             \       'command': g:unite_source_prove_fail_command,
@@ -52,10 +52,12 @@ function! s:source.async_gather_candidates(args, context)
     let path = expand('#:p')
     return map(_, '{
     \   "word": v:val,
-    \   "source": "prove-fail",
+    \   "source": "prove",
     \   "kind": "jump_list",
     \   "action__path": v:val,
     \ }')
 endfunction
 
-call unite#define_source(s:source)
+function! unite#sources#prove#define()
+    return s:source
+endfunction
