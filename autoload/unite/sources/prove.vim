@@ -1,17 +1,17 @@
 "required:
     "vimproc
 
-call unite#util#set_default('g:unite_source_prove_fail_command', 'prove')
+call unite#util#set_default('g:unite_source_prove_command', 'prove')
 
 let s:source = {
             \ 'name': 'prove',
             \ 'hooks': {},
             \ 'variables': {
-            \       'command': g:unite_source_prove_fail_command,
+            \       'command': g:unite_source_prove_command,
             \   },
             \ }
 
-function! s:source.hooks.on_init(args, context) "{{{
+function! s:source.hooks.on_init(args, context)
     if !unite#util#has_vimproc()
         call unite#print_source_error(
             \ 'vimproc is required', s:source.name)
