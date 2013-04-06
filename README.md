@@ -1,4 +1,4 @@
-# vim-unite-prove-fail
+# vim-unite-prove
 ------------------------
 
 # Description
@@ -7,7 +7,7 @@
 
 in vimrc, if you using NeoBundle
 
-    NeoBundle 'rightoverture/vim-unite-prove-fail', {'depends': 'Shougo/vimproc'}
+    NeoBundle 'rightoverture/vim-unite-prove', {'depends': 'Shougo/vimproc'}
 
 # Depends on
 
